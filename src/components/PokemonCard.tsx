@@ -11,8 +11,9 @@ function PokemonCard({ pokemon }: PokemonCardProps) {
 				) : (
 					<p>????</p>
 				)}
+				<figcaption>{pokemon.name}</figcaption>
 			</figure>
-			<figcaption>{pokemon.name}</figcaption>
+			
 		</>
 	);
 }
