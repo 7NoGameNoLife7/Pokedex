@@ -1,8 +1,6 @@
 import Pokemon from "./PokemonCard";
 import { Dispatch } from "react";
 
-
-
 interface Pokemon {
     name: string;
     imgSrc?: string;
@@ -14,19 +12,26 @@ interface Pokemon {
   }
 
 function NavBar({ setPokemonName, pokemonList }: NavBarProps) {
-    return(
+  function handleClick(pokemonName: string) {
+    setPokemonName(pokemonName);
+    if (pokemonName === "pikachu") {
+      alert("picka pikachu!!!!!");
+    }};
+
+  return(
     <nav>	 
         {pokemonList.map((pokemonItem) => (
 			<button
 			  key={pokemonItem.name}
 			  type="button"
-			  onClick={() => setPokemonName(pokemonItem.name)}
+			  onClick={() => handleClick(pokemonItem.name)}
 			>
 			  {pokemonItem.name}
 			</button>
 		))}
     </nav>);
   }
+
   
 export default NavBar;
 export type { NavBarProps };
